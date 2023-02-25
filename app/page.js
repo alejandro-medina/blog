@@ -1,25 +1,29 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+"use client";
 
-const inter = Inter({ subsets: ['latin'] })
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(json => setPosts(json))
+  }, []);
+
+
   return (
     <main className="">
-      <>
-        <div role="blog_post">
-          <a href="">
-            <p className='description'>Post 1</p>
-          </a>
-        </div>
-
-        <div role="blog_post">
-          <a href="">
-            <p className='description'>Post 2.</p>
-          </a>
-        </div>
-      </>
+      <p>Blog</p>
+      {
+        posts.map(post => (
+          <article key={post.id} role="blog_post">
+            <h2>{post.title}</h2>
+            <a href={`/blog/${post.id}`}>Read More</a>
+          </article>
+        ))
+      }
     </main>
   )
 }
