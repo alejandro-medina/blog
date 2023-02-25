@@ -20,7 +20,6 @@ export default function Home() {
         posts.map(post => (
           <div key={post.id} role="blog_post">
             <a href={`/blog/${post.id}`}>
-              <h2>{post.title}</h2>
               <p>{post.body}</p>
             </a>
           </div>
