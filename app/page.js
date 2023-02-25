@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <main className="">
-      <p>Blog</p>
+      <p>Blog Posts</p>
     </main>
   )
 }
