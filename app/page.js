@@ -16,14 +16,6 @@ export default function Home() {
   return (
     <main className="">
       <p>Blog</p>
-      {
-        posts.map(post => (
-          <article key={post.id} role="blog_post">
-            <h2>{post.title}</h2>
-            <a href={`/blog/${post.id}`}>Read More</a>
-          </article>
-        ))
-      }
     </main>
   )
 }
