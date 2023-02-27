@@ -6,7 +6,7 @@ export default function Home() {
   const posts = getSortedPostsData();
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-8">
       {
         posts.map(post => (
           <BlogPostCard key={post.id} post={post} />

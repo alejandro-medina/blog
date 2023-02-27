@@ -40,7 +40,7 @@ describe('Blog Home', () => {
     });
     const posts = screen.getAllByRole('blog_post');
     posts.forEach(post => {
-      const likElement = post.querySelector('a');
+      const likElement = post;
       expect(likElement).toBeTruthy();
       expect(likElement).toHaveAttribute('href');
       expect(likElement.getAttribute('href')).not.toBe('');
