@@ -15,10 +15,8 @@ export default async function Post({ params: { slug } }) {
   )
 }
 
-export function getStaticPaths() {
-  const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: false
-  }
+export function generateStaticParams() {
+  return getAllPostIds();
 }
+
+export const dynamicParams = false;
