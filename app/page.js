@@ -1,17 +1,8 @@
-"use client";
-
-import { useEffect, useState } from 'react'
+import { getSortedPostsData } from "../lib/posts";
 
 export default function Home() {
 
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(response => response.json())
-      .then(json => setPosts(json))
-  }, []);
-
+  const posts = getSortedPostsData();
 
   return (
     <main className="">
@@ -19,8 +10,8 @@ export default function Home() {
       {
         posts.map(post => (
           <div key={post.id} role="blog_post">
-            <a href={`/blog/${post.id}`}>
-              <p>{post.body}</p>
+            <a href={`/${post.id}`}>
+              <p>{post.title}</p>
             </a>
           </div>
         ))
