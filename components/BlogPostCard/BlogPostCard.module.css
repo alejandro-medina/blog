@@ -1,0 +1,13 @@
+.blog__post__card {
+  @apply bg-white rounded shadow p-4 cursor-pointer;
+}
+
+.blog__post__card:hover {
+  @apply shadow-lg;
+}
+
+@media (prefers-color-scheme: dark) {
+  .blog__post__card {
+    @apply bg-gray-800 text-white;
+  }
+}

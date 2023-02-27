@@ -1,3 +1,4 @@
+import BlogPostCard from "../components/BlogPostCard";
 import { getSortedPostsData } from "../lib/posts";
 
 export default function Home() {
@@ -5,17 +6,12 @@ export default function Home() {
   const posts = getSortedPostsData();
 
   return (
-    <main className="">
-      <p>Blog Posts</p>
+    <div className="flex flex-col gap-4">
       {
         posts.map(post => (
-          <div key={post.id} role="blog_post">
-            <a href={`/${post.id}`}>
-              <p>{post.title}</p>
-            </a>
-          </div>
+          <BlogPostCard key={post.id} post={post} />
         ))
       }
-    </main>
+    </div>
   )
 }
