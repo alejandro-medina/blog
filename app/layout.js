@@ -10,8 +10,10 @@ export default function RootLayout({ children }) {
           <header>
             <Header />
           </header>
-          <main className='mt-36 mb-36'>
-            {children}
+          <main className='mt-36 mb-16 lg:mb-36 min-h-screen'>
+            <div className='px-4'>
+              {children}
+            </div>
           </main>
           <footer>
             <div className='w-full py-4'>
